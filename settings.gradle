@@ -1,0 +1,3 @@
+rootProject.name = 'gowindserver'
+include 'gowind-dropwizard'
+include 'gowind-backend'
