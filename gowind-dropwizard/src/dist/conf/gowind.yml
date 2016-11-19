@@ -1,10 +1,18 @@
 server:
-  type: simple
-  adminContextPath: /admin
+  adminMinThreads: 1
+  adminMaxThreads: 64
+  adminContextPath: /
   applicationContextPath: /
-  connector:
-    type: http
-    port: 9200
+  applicationConnectors:
+    - type: http
+      port: 9200
+    - type: https
+      port: 8443
+      keyStorePath: /Users/shiv.loka/gowindserver/gowind-dropwizard/cert/keystore.jks
+      keyStorePassword: changeit
+      keyStoreType: JKS
+      validateCerts: true
+      trustStorePath: /Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/jre/lib/security/cacerts
   gzip:
     enabled: false
   requestLog:

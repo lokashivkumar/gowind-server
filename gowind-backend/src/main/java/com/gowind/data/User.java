@@ -1,8 +1,11 @@
 package com.gowind.data;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.UUID;
 
-public class UserDto {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class User {
 
     private UUID userId;
     private String userName;
@@ -10,7 +13,7 @@ public class UserDto {
     private int rating;
     private String email;
 
-    public UserDto() {
+    public User() {
         this.userId = UUID.randomUUID();
     }
 

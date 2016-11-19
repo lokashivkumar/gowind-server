@@ -1,9 +1,7 @@
 package com.gowinddropwizard.main;
 
 import com.gowinddropwizard.main.healthchecks.GoWindHealthCheck;
-import com.gowinddropwizard.main.resources.GowindBaseResource;
-import com.gowinddropwizard.main.resources.RequestRideResource;
-import com.gowinddropwizard.main.resources.UserResource;
+import com.gowinddropwizard.main.resources.*;
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;
 import io.dropwizard.setup.Environment;
@@ -28,6 +26,9 @@ public class GoWindApplication extends Application<Configuration> {
         environment.jersey().register(new GowindBaseResource());
         environment.jersey().register(new UserResource());
         environment.jersey().register(new RequestRideResource());
+        environment.jersey().register(new FareEstimateResource());
+        environment.jersey().register(new DriverFinderResource());
+
         final GoWindHealthCheck healthCheck =
                 new GoWindHealthCheck();
         environment.healthChecks().register("test", healthCheck);
