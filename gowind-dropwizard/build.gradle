@@ -1,4 +1,4 @@
-apply plugin: 'application'
+//apply plugin: 'application'
 apply plugin: 'idea'
 apply plugin: 'java-library-distribution'
 
@@ -6,7 +6,7 @@ repositories {
     mavenCentral()
 }
 
-mainClassName = 'com.gowind.main.GowindApplication'
+mainClassName = 'com.gowinddropwizard.main.GowindApplication'
 
 dependencies {
 
