@@ -1,0 +1,1 @@
+web: java $JAVA_OPTS -Ddw.server.connector.port=$PORT -jar gowind-dropwizard/build/libs/gowind-dropwizard.jar server gowind-dropwizard/src/dist/conf/gowind.yml

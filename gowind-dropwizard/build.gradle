@@ -1,5 +1,3 @@
-version 'unspecified'
-
 apply plugin: 'application'
 apply plugin: 'idea'
 
@@ -8,33 +6,6 @@ repositories {
 }
 
 mainClassName = 'com.gowind.main.GowindApplication'
-
-
-run {
-    args 'server', './src/dist/conf/gowind.yml'
-}
-
-distZip {
-    archiveName 'gowind-server.zip'
-}
-
-task copyToLib(type: Copy) {
-    into "$buildDir/libs"
-    from(configurations.compile)
-}
-
-task stage(dependsOn: ['clean', 'installDist', 'copyToLib'])
-
-jar {
-    baseName = 'gowind-dropwizard'
-    manifest {
-        attributes(
-                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
-                'Main-Class': 'com.gowinddropwizard.main.GoWindApplication'
-        )
-    }
-}
-
 
 dependencies {
 
@@ -52,6 +23,31 @@ dependencies {
     compile group: 'javax.annotation', name: 'javax.annotation-api', version: '1.2'
 
     testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+distZip {
+    archiveName 'gowind-server.zip'
+}
+
+task copyToLib(type: Copy) {
+    into "$buildDir/libs"
+    from(configurations.compile)
+}
+
+task stage(dependsOn: ['clean', 'installDist', 'copyToLib'])
+
+jar {
+    baseName = 'gowind-dropwizard'
+    manifest {
+        attributes(
+//                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.gowinddropwizard.main.GoWindApplication'
+        )
+    }
+}
+
+run {
+    args 'server', './src/dist/conf/gowind.yml'
 }
 
 task createDocs {

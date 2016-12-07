@@ -1,3 +1,5 @@
 rootProject.name = 'gowindserver'
-include 'gowind-dropwizard'
 include 'gowind-backend'
+include 'gowind-dropwizard'
+
+project(':gowind-backend').projectDir = new File('libraries/gowind-backend')
