@@ -1,6 +1,6 @@
 #! /bin/bash
 # Starts the application by default as server and on port 9200
-# defined in the sup.yml file.
+# defined in the gowind.yml file.
 
 set -e
 
