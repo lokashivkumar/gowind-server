@@ -26,16 +26,12 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
-distZip {
-    archiveName 'gowind-server.zip'
-}
+//
+//task copyToLib(type: Copy) {
+//    into "$buildDir/libs"
+//}
 
-task copyToLib(type: Copy) {
-    into "$buildDir/libs"
-    from(configurations.compile)
-}
-
-task stage(dependsOn: ['clean', 'installDist', 'copyToLib'])
+task stage(dependsOn: ['clean'])
 
 jar {
     baseName = 'gowind-dropwizard'
