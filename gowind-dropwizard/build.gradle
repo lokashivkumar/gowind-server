@@ -28,17 +28,17 @@ task wrapper(type: Wrapper) {
     gradleVersion = '3.2.1'
 }
 
-distributions {
-    main {
-        baseName = 'gowind-dropwizard'
-        contents {
-            into ('lib') {
-                from jar
-                from (project.configurations.runtime)
-            }
-        }
-    }
-}
+//distributions {
+//    main {
+//        baseName = 'gowind-dropwizard'
+//        contents {
+//            into ('lib') {
+//                from jar
+//                from (project.configurations.runtime)
+//            }
+//        }
+//    }
+//}
 
 run {
     args 'server', './src/dist/conf/gowind.yml'
