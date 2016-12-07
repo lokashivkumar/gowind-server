@@ -1,0 +1,16 @@
+{
+  "name": "gowind-server",
+  "description": "runs the backend for gowind application. Runs the dropwizard services and compiles the dependent gowind-backend application.",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
