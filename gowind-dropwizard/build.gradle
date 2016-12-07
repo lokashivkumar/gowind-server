@@ -1,6 +1,6 @@
 apply plugin: 'application'
 apply plugin: 'idea'
-apply plugin: 'distribution'
+apply plugin: 'java-library-distribution'
 
 repositories {
     mavenCentral()
@@ -26,20 +26,15 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
 
-//
-//task copyToLib(type: Copy) {
-//    into "$buildDir/libs"
-//}
-
-task stage(dependsOn: ['clean'])
-
-jar {
-    baseName = 'gowind-dropwizard'
-    manifest {
-        attributes(
-//                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
-                'Main-Class': 'com.gowinddropwizard.main.GoWindApplication'
-        )
+distributions {
+    main {
+        baseName = 'gowind-dropwizard'
+        contents {
+            into ('lib') {
+                from jar
+                from (project.configurations.runtime)
+            }
+        }
     }
 }
 
