@@ -28,6 +28,15 @@ task wrapper(type: Wrapper) {
     gradleVersion = '3.2.1'
 }
 
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.gowinddropwizard.main.GoWindApplication'
+        )
+    }
+}
+
 //distributions {
 //    main {
 //        baseName = 'gowind-dropwizard'
@@ -54,3 +63,4 @@ task createDocs {
 }
 
 task stage(dependsOn: ['clean', 'build'])
+build.mustRunAfter clean
