@@ -53,4 +53,4 @@ task createDocs {
     }
 }
 
-task stage(dependsOn: ['clean', 'installDist'])
+task stage(dependsOn: ['clean', 'build'])
