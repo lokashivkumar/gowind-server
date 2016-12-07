@@ -1,8 +1,7 @@
 package com.gowinddropwizard.main.resources;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.google.gson.Gson;
-import com.gowind.data.UserDto;
+import com.gowind.data.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,7 +15,7 @@ public class UserResource {
 
     private static final Logger logger = LoggerFactory.getLogger(UserResource.class);
     private static final String LOGTAG = UserResource.class.getSimpleName();
-    private UserDto userData;
+    private User userData;
 
     @Path("/getuser")
     @GET
@@ -24,7 +23,7 @@ public class UserResource {
     public Response getUser(@QueryParam("username") String userName) {
         System.out.println(userName);
         logger.info(LOGTAG, userName);
-        userData = new UserDto();
+        userData = new User();
         userData.setUserName(userName);
         userData.setEmail("user1@test.com");
         userData.setPhoneNumber("408-777-7777");
@@ -38,9 +37,7 @@ public class UserResource {
     @Path("/test")
     @GET
     public Response testUser() {
-        Gson gson = new Gson();
-        String response = gson.toJson("User Ok");
-        return Response.ok(response).build();
+        return Response.ok("OK").build();
     }
 
     @Path("/saveUser")

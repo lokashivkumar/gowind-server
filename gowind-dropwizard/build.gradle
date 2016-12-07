@@ -18,6 +18,24 @@ distZip {
     archiveName 'gowind-server.zip'
 }
 
+task copyToLib(type: Copy) {
+    into "$buildDir/libs"
+    from(configurations.compile)
+}
+
+task stage(dependsOn: ['clean', 'installDist', 'copyToLib'])
+
+jar {
+    baseName = 'gowind-dropwizard'
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'com.gowinddropwizard.main.GoWindApplication'
+        )
+    }
+}
+
+
 dependencies {
 
     compile project(":gowind-backend")
