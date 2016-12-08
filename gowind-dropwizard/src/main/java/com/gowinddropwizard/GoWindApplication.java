@@ -1,7 +1,7 @@
-package com.gowinddropwizard.main;
+package com.gowinddropwizard;
 
-import com.gowinddropwizard.main.healthchecks.GoWindHealthCheck;
-import com.gowinddropwizard.main.resources.*;
+import com.gowinddropwizard.healthchecks.GoWindHealthCheck;
+import com.gowinddropwizard.resources.*;
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;
 import io.dropwizard.setup.Environment;

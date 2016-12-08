@@ -1,4 +1,4 @@
-package com.gowinddropwizard.main.resources;
+package com.gowinddropwizard.resources;
 
 import com.gowind.main.FareCalculator;
 import org.slf4j.Logger;

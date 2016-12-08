@@ -1,4 +1,4 @@
-package com.gowinddropwizard.main.resources;
+package com.gowinddropwizard.resources;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.gowind.data.Ride;

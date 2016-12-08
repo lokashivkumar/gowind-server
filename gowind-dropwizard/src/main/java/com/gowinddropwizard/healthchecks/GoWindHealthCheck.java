@@ -1,4 +1,4 @@
-package com.gowinddropwizard.main.healthchecks;
+package com.gowinddropwizard.healthchecks;
 
 import com.codahale.metrics.health.HealthCheck;
 

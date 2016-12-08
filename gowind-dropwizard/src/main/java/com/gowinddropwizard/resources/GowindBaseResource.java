@@ -1,4 +1,4 @@
-package com.gowinddropwizard.main.resources;
+package com.gowinddropwizard.resources;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

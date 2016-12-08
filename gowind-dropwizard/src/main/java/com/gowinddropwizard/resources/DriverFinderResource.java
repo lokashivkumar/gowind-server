@@ -1,4 +1,4 @@
-package com.gowinddropwizard.main.resources;
+package com.gowinddropwizard.resources;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

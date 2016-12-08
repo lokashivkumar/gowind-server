@@ -1,0 +1,5 @@
+allprojects {
+    apply plugin: 'java'
+    group = 'com.gowind'
+    version = '1.0'
+}

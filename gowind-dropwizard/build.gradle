@@ -4,7 +4,7 @@ repositories {
     mavenCentral()
 }
 
-mainClassName = 'com.gowinddropwizard.main.GowindApplication'
+mainClassName = 'com.gowinddropwizard.GowindApplication'
 
 dependencies {
 
@@ -30,10 +30,7 @@ task wrapper(type: Wrapper) {
 
 jar {
     manifest {
-        attributes(
-                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
-                'Main-Class': 'com.gowinddropwizard.main.GoWindApplication'
-        )
+        attributes 'Main-Class': 'com.gowinddropwizard.GoWindApplication'
     }
 }
 

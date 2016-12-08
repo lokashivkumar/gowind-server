@@ -1,4 +1,4 @@
-package com.gowinddropwizard.main.resources;
+package com.gowinddropwizard.resources;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.gowind.data.User;
