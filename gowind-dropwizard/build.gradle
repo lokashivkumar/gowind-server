@@ -58,6 +58,3 @@ task createDocs {
         new File(docs, "readme.txt").write("Read me!")
     }
 }
-
-task stage(dependsOn: ['clean', 'build'])
-build.mustRunAfter clean
